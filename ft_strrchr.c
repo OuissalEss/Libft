@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/03 11:56:11 by oessamdi          #+#    #+#             */
-/*   Updated: 2021/11/12 12:55:58 by oessamdi         ###   ########.fr       */
+/*   Created: 2021/11/03 15:05:31 by oessamdi          #+#    #+#             */
+/*   Updated: 2021/11/16 22:21:17 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
-	char	*str;
+	char	*occurrence;
 
-	str = (char *) s;
-	if (c == '\0')
-		return (str + ft_strlen(s));
-	i = 0;
-	while (str[i])
+	occurrence = NULL;
+	if (c == 0)
+		return ((char *) s + ft_strlen(s));
+	while (*s)
 	{
-		if (str[i] == (char) c)
-			return (&str[i]);
-		i++;
+		if (*s == (char) c)
+			occurrence = (char *) s;
+		s++;
 	}
-	return (0);
+	return (occurrence);
 }

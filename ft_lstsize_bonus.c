@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/05 13:01:01 by oessamdi          #+#    #+#             */
-/*   Updated: 2021/11/11 15:43:44 by oessamdi         ###   ########.fr       */
+/*   Created: 2021/11/23 20:02:05 by oessamdi          #+#    #+#             */
+/*   Updated: 2021/11/23 20:02:08 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
-	size_t	j;
-	char	*h;
+	t_list	*l;
+	int		compteur;
 
-	i = 0;
-	h = (char *) haystack;
-	if (needle[i] == 0)
-		return (h);
-	while (h[i] && i < len)
+	l = lst;
+	compteur = 0;
+	while (l)
 	{
-		j = 0;
-		while (needle[j] && needle[j] == h[i + j] && i + j < len)
-		{
-			if (needle[j + 1] == '\0')
-				return (&h[i]);
-			j++;
-		}
-		i++;
+		l = l -> next;
+		compteur++;
 	}
-	return (NULL);
+	return (compteur);
 }

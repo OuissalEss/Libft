@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:44:29 by oessamdi          #+#    #+#             */
-/*   Updated: 2021/11/11 03:08:19 by oessamdi         ###   ########.fr       */
+/*   Updated: 2021/11/23 20:17:10 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		}
 	}
 	else if (d < s)
-	{
-		while (i < len)
-		{
-			d[i] = s[i];
-			i++;
-		}
-	}
+		ft_memcpy(dst, src, len);
 	return (dst);
 }
-/*
-int main()
-{
-	char s[] = "abcdefjh";
-	char s2[] = "abcdefjh";
-	//char *res1 = (char *) memmove(s1+2, s1, 2);
-	//char *res2 = (char *) ft_memmove(s2+2, s2, 2);
-	 
- 	printf("%s\n", memmove(s+2, s, 7));
- 	printf("%s\n", ft_memmove(s2+2, s2, 7));
-}
-*/

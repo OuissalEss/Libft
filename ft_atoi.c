@@ -6,7 +6,7 @@
 /*   By: oessamdi <oessamdi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:16:34 by oessamdi          #+#    #+#             */
-/*   Updated: 2021/11/12 11:19:27 by oessamdi         ###   ########.fr       */
+/*   Updated: 2021/11/21 14:55:02 by oessamdi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,9 @@ int	ft_atoi(char const *str)
 		res = (res * 10) + str[i] - '0';
 		i++;
 	}
-	if (sign == 1 && res > MAX_LONG)
+	if (sign == 1 && res > 9223372036854775807)
 		return (-1);
-	if (sign == -1 && res > MAX_LONG + 1)
+	if (sign == -1 && res > 9223372036854775807)
 		return (0);
 	return ((int) res * sign);
 }
-
-// int main()
-// {
-// 	printf("%d\n", atoi("9223372036854775809"));
-// 	printf("%d\n", ft_atoi("9223372036854775809"));
-// }
